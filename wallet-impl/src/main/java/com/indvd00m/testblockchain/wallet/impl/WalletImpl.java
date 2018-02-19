@@ -236,7 +236,7 @@ public class WalletImpl implements Wallet {
 			state.setBlocks((int) getblockcount());
 			state.setPaytxfee(txFee);
 			state.setProtocolversion(protocolVersion);
-			state.setTestnet(false);
+			state.setTestnet(true);
 			state.setVersion(blockchain.getVersion());
 			state.setWalletversion(walletVersion);
 			return state;
