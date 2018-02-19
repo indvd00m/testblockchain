@@ -32,20 +32,22 @@ public class Main {
 		Configurations configs = new Configurations();
 		Configuration config = configs.properties(Main.class.getClassLoader().getResource("config.properties"));
 
-		Option helpOption = Option.builder().longOpt("help").hasArg(false).desc("Show options description").build();
-		Option versionOption = Option.builder().longOpt("version").hasArg(false).desc("Print version").build();
+		Option helpOption = Option.builder("h").longOpt("help").hasArg(false).desc("Show options description").build();
+		Option versionOption = Option.builder("v").longOpt("version").hasArg(false).desc("Print version").build();
 
 		Options infoOptions = new Options();
 		infoOptions.addOption(helpOption);
 		infoOptions.addOption(versionOption);
 
-		Option coinNameOption = Option.builder().longOpt("coin-name").argName("name").hasArg().required()
+		Option coinNameOption = Option.builder("n").longOpt("name").argName("name").hasArg().required()
 				.desc("Coin name").build();
-		Option walletOption = Option.builder().longOpt("wallet").argName("port:balance").hasArg().required().desc(
-				"Wallet definition. Specify local TCP <port> and starting <balance> of coins in wallet. This option can be used multiple times.")
+		Option walletOption = Option.builder("w").longOpt("wallet").argName("port:balance").hasArg().required().desc(
+				"Wallet definition. Specify local TCP <port> and starting <balance> of wallet. This option can be used multiple times.")
 				.build();
-		Option blockPeriodOption = Option.builder().longOpt("block-period").argName("millis").hasArg()
-				.type(Number.class).desc("Block generation period in millis").build();
+		Option blockPeriodOption = Option.builder("bp").longOpt("block-period").argName("millis").hasArg()
+				.type(Number.class).desc(String.format("Block generation period in millis, %d by default.",
+						CoinServer.DEFAULT_BLOCK_GENERATION_PERIOD_MILLIS))
+				.build();
 
 		Options startOptions = new Options();
 		startOptions.addOption(coinNameOption);
@@ -57,7 +59,7 @@ public class Main {
 
 			CommandLine cmd = parser.parse(infoOptions, args, true);
 			if (cmd.hasOption(helpOption.getLongOpt())) {
-				println("TestBlockchain - cryptocurrency wallet implementation.");
+				println("TestBlockchain - cryptocurrency wallet implementation for tests.");
 				Options options = new Options();
 				startOptions.getOptions().stream().forEachOrdered(o -> options.addOption(o));
 				infoOptions.getOptions().stream().forEachOrdered(o -> options.addOption(o));
