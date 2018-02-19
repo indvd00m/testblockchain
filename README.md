@@ -2,7 +2,7 @@
 
 TestBlockchain is a cryptocurrency wallet imitation. This wallet is independent from any real blockchain, does not support any kind of decentralization and cryptography, and implement only part of original [RPC methods](https://bitcoin.org/en/developer-reference#rpcs). One of purposes of this project is a testing of some kind of integrations with real cryptocurrency wallets. 
 
-TestBlockchain is allows you imitate real blockchain with any number of wallets. You can set start balance of this wallets and set time period for blocks generation. Then you can connect to this wallets over JSON-RPC protocol (in exactly the same way as you would connect to real wallets) and create transactions, send coins, wait confirmations, etc. No any data will be persisted or sent somewhere, so after stopping of TestBlockchain and starting again new blockchain would be created.
+TestBlockchain is allows you imitate real blockchain with any number of wallets. You can set start balance of this wallets and set time period for blocks generation. Then you can connect to this wallets over JSON-RPC protocol (in exactly the same way as you would [connect](https://bitcoin.org/en/developer-reference#remote-procedure-calls-rpcs) to real wallets) and create transactions, send coins, wait confirmations, etc. No any data will be persisted or sent somewhere, so after stopping of TestBlockchain and starting again new blockchain would be created.
 
 ## Requirements
 TestBlockchain require java 8 for running.
