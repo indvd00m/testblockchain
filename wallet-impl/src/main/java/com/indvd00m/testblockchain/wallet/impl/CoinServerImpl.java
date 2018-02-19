@@ -79,7 +79,7 @@ public class CoinServerImpl implements CoinServer {
 		w.lock();
 		try {
 			// rpc server
-			log.info(String.format("Prepare %d JSON-RPC servers", walletBalancesByPort.size()));
+			log.info(String.format("Prepare %d wallets", walletBalancesByPort.size()));
 
 			blockchain = new BlockchainImpl(blockGenerationPeriodMillis, scale);
 			serversByPort = new HashMap<>();
@@ -94,7 +94,7 @@ public class CoinServerImpl implements CoinServer {
 			});
 
 			// http server
-			log.info(String.format("Creating http server"));
+			log.info(String.format("Creating HTTP server"));
 			QueuedThreadPool threadPool = new QueuedThreadPool();
 			server = new Server(threadPool);
 
@@ -130,10 +130,15 @@ public class CoinServerImpl implements CoinServer {
 			});
 			handler.addServlet(rootHolder, "/");
 
+			log.info(String.format("Starting blockchain with period %d millis for block generations",
+					blockGenerationPeriodMillis));
 			blockchain.start();
+
+			log.info(String.format("Starting HTTP server"));
 			server.start();
 
-			log.info(String.format("JSON-RPC server started!"));
+			log.info(String.format("Blockchain with %d wallets started and ready to accept connections!",
+					walletBalancesByPort.size()));
 		} catch (Exception e) {
 			log.error("ERROR", e);
 			if (server != null) {

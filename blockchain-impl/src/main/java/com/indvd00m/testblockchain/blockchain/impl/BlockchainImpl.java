@@ -194,8 +194,8 @@ public class BlockchainImpl implements Blockchain {
 				transactionsByTxid.put(transaction.getTxid(), transaction);
 				long fromAddressesCount = transaction.getFromAddresses().keySet().stream().filter(a -> a != null)
 						.count();
-				log.debug(String.format("Transaction %s: %s from %d addresses to %d addresses", transaction.getTxid(),
-						transaction.getAmount().toPlainString(), fromAddressesCount,
+				log.debug(String.format("New transaction %s: %s from %d addresses to %d addresses",
+						transaction.getTxid(), transaction.getAmount().toPlainString(), fromAddressesCount,
 						transaction.getToAddresses().size()));
 			});
 			localBalances.entrySet().stream().forEach(e -> {
