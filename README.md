@@ -8,13 +8,21 @@ TestBlockchain is allows you imitate real blockchain with any number of wallets.
 TestBlockchain require java 8 for running.
 
 ## Using
+It is possible to use TestBlockchain either with command line or with java API.
 
 ### Command-line
-Download and unzip `testblockchain-cli` zip archive. Start blockchain with name `BTC` and two
+Download from [releases](https://github.com/indvd00m/testblockchain/releases) and unzip `testblockchain-cli-VERSION.zip` zip archive. Start blockchain with name `BTC` and two
 wallets at ports `10000` and `10001` and start balances `3` and `5.5` coins:
 
 ```bash
 $ ./testblockchain.sh --name BTC --wallet 10000:3 --wallet 10001:5.5
+21:18:38.470 [main] INFO  BTC - Prepare 2 wallets
+21:18:38.526 [main] INFO  BTC - Creating JSON-RPC server at port 10000 with start balance 3.00000000
+21:18:38.695 [main] INFO  BTC - Creating JSON-RPC server at port 10001 with start balance 5.50000000
+21:18:38.696 [main] INFO  BTC - Creating HTTP server
+21:18:38.764 [main] INFO  BTC - Starting blockchain with period 1000 millis for block generations
+21:18:38.764 [main] INFO  BTC - Starting HTTP server
+21:18:38.813 [main] INFO  BTC - Blockchain with 2 wallets started and ready to accept connections!
 ```
 
 Create some transactions, for example by original [Bitcoin Core](https://bitcoin.org/en/download) client.
