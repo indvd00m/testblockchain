@@ -34,20 +34,22 @@ public class Main {
 		Configurations configs = new Configurations();
 		Configuration config = configs.properties(Main.class.getClassLoader().getResource("config.properties"));
 
-		Option helpOption = Option.builder("h").longOpt("help").hasArg(false).desc("Show options description").build();
-		Option versionOption = Option.builder("v").longOpt("version").hasArg(false).desc("Print version").build();
+		Option helpOption = Option.builder("h").longOpt("help").hasArg(false).desc("show options description and exit")
+				.build();
+		Option versionOption = Option.builder("v").longOpt("version").hasArg(false).desc("print version and exit")
+				.build();
 
 		Options infoOptions = new Options();
 		infoOptions.addOption(helpOption);
 		infoOptions.addOption(versionOption);
 
 		Option coinNameOption = Option.builder("n").longOpt("name").argName("name").hasArg().required()
-				.desc("Coin name").build();
+				.desc("coin name").build();
 		Option walletOption = Option.builder("w").longOpt("wallet").argName("port:balance").hasArg().required().desc(
 				"Wallet definition. Specify local TCP <port> and starting <balance> of wallet. This option can be used multiple times.")
 				.build();
 		Option blockPeriodOption = Option.builder("bp").longOpt("block-period").argName("millis").hasArg()
-				.type(Number.class).desc(String.format("Block generation period in millis, %d by default.",
+				.type(Number.class).desc(String.format("block generation period in millis, %d by default",
 						CoinServer.DEFAULT_BLOCK_GENERATION_PERIOD_MILLIS))
 				.build();
 
