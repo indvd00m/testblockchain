@@ -1,6 +1,7 @@
 package com.indvd00m.testblockchain.cli;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -16,6 +17,7 @@ import org.apache.commons.cli.ParseException;
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
 
+import com.indvd00m.testblockchain.blockchain.api.Blockchain;
 import com.indvd00m.testblockchain.wallet.api.CoinServer;
 import com.indvd00m.testblockchain.wallet.impl.CoinServerImpl;
 
@@ -87,6 +89,7 @@ public class Main {
 				}
 				Integer port = Integer.valueOf(m.group(1));
 				BigDecimal balance = new BigDecimal(m.group(2));
+				balance = fixScale(balance, Blockchain.DEFAULT_SCALE);
 				walletBalancesByPort.put(port, balance);
 			}
 
@@ -105,6 +108,16 @@ public class Main {
 		} catch (ParseException e) {
 			println(e.getMessage());
 			println("Use --%s option for more information", helpOption.getLongOpt());
+		}
+	}
+
+	private static BigDecimal fixScale(BigDecimal value, int scale) {
+		BigDecimal scaledValue = value.setScale(scale, RoundingMode.HALF_DOWN);
+		if (value.compareTo(scaledValue) != 0) {
+			// ok, pass illegal value to coin server
+			return value;
+		} else {
+			return scaledValue;
 		}
 	}
 
