@@ -1,4 +1,4 @@
-package com.indvd00m.testblockchain.wallet.impl;
+package com.indvd00m.testblockchain.cli;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -17,6 +17,7 @@ import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
 
 import com.indvd00m.testblockchain.wallet.api.CoinServer;
+import com.indvd00m.testblockchain.wallet.impl.CoinServerImpl;
 
 /**
  * @author indvd00m (gotoindvdum[at]gmail[dot]com)

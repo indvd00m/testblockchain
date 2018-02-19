@@ -23,6 +23,7 @@
 		<module>blockchain-impl</module>
 		<module>wallet-api</module>
 		<module>wallet-impl</module>
+		<module>testblockchain-cli</module>
 	</modules>
 
 </project>
