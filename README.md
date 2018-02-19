@@ -10,7 +10,7 @@ TestBlockchain require java 8 for running.
 ## Using
 
 ### Command-line
-Download and unzip `testblockchain-cli` module. Start blockchain with name `BTC` and two
+Download and unzip `testblockchain-cli` zip archive. Start blockchain with name `BTC` and two
 wallets at ports `10000` and `10001` and start balances `3` and `5.5` coins:
 
 ```bash
