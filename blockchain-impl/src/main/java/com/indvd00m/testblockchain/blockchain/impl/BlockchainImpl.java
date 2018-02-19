@@ -35,7 +35,6 @@ import com.indvd00m.testblockchain.blockchain.api.TransactionRequest;
 public class BlockchainImpl implements Blockchain {
 
 	protected static final Logger log = LoggerFactory.getLogger(BlockchainImpl.class);
-	public static final int DEFAULT_SCALE = 8;
 
 	final int version = 100;
 

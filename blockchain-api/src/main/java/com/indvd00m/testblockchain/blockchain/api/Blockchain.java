@@ -11,6 +11,8 @@ import java.util.Map;
  */
 public interface Blockchain {
 
+	int DEFAULT_SCALE = 8;
+
 	boolean isStarted();
 
 	void start();

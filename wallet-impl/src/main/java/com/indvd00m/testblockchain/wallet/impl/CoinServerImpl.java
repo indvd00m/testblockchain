@@ -38,8 +38,8 @@ public class CoinServerImpl implements CoinServer {
 
 	String coinName;
 	Map<Integer, BigDecimal> walletBalancesByPort;
-	long blockGenerationPeriodMillis = 1000;
-	int scale = BlockchainImpl.DEFAULT_SCALE;
+	long blockGenerationPeriodMillis = DEFAULT_BLOCK_GENERATION_PERIOD_MILLIS;
+	int scale = Blockchain.DEFAULT_SCALE;
 
 	// data
 	Blockchain blockchain;

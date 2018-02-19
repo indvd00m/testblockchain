@@ -9,6 +9,8 @@ import java.util.Map;
  */
 public interface CoinServer {
 
+	int DEFAULT_BLOCK_GENERATION_PERIOD_MILLIS = 1000;
+
 	void start() throws Exception;
 
 	void stop() throws Exception;
