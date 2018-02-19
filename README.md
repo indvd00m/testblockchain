@@ -98,7 +98,8 @@ Create blockchain, wallets and some transactions:
 
 See tests in module `wallet-impl` for more examples. For remote connecting over JSON-RPC protocol with [jsonrpc4j](https://github.com/briandilley/jsonrpc4j) see example in test `TestCoinServer`.
 
-## Supported JSON-RPC methods:
+## Implementation details
+### Supported JSON-RPC methods:
 List of original [RPC methods](https://bitcoin.org/en/developer-reference#rpcs) which now implemented:
 
 | Name | Notes |
@@ -124,15 +125,12 @@ List of original [RPC methods](https://bitcoin.org/en/developer-reference#rpcs) 
 | `settxfee` | |
 | `validateaddress` | |
 
-Other methods will return `-32001` or `-32601` errors codes. Behavior of some implemented methods may differ from original blockchain but as far as possible it repeats the original.
+Other methods will return `-32001` or `-32601` error codes. Behavior of some implemented methods may differ from original blockchain but as far as possible it repeats the original.
 
 
 ## CI
 Travis builds: 
 [![Build Status](https://travis-ci.org/indvd00m/testblockchain.svg?branch=master)](https://travis-ci.org/indvd00m/testblockchain)
-
-## Implementation details
-
 
 ## Download release
 
