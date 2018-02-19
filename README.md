@@ -62,7 +62,7 @@ Add dependency to your maven project:
 	<dependency>
 		<groupId>com.indvd00m.testblockchain</groupId>
 		<artifactId>wallet-impl</artifactId>
-		<version>1.0.4-SNAPSHOT</version>
+		<version>1.1.0</version>
 	</dependency>
 ```
 Create blockchain, wallets and some transactions:
