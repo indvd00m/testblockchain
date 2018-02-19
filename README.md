@@ -36,10 +36,11 @@ $ ./bitcoin-cli -rpcconnect=localhost -rpcport=10001 getbalance
 ```
 
 Available `testblockchain` CLI options:
+
 | Name | Long name | Required | Default value | Description |
 | --- | --- | --- | --- | --- |
 | `-n` | `--name` | Yes | | Coin name. |
-| `-w` | `--wallet` | Yes | | Wallet definition in `<port:balance>` format. Specify local TCP <port> and starting <balance> of wallet. This option can be used multiple times. |
+| `-w` | `--wallet` | Yes | | Wallet definition in `<port:balance>` format. Specify local TCP port and starting balance of wallet. This option can be used multiple times. |
 | `-bp` | `--block-period` | No | 1000 | Block generation period in millis. |
 | `-v` | `--version` | No | | Print version and exit. |
 | `-h` | `--help` | No | | Print help and exit. |
@@ -99,6 +100,7 @@ See tests in module `wallet-impl` for more examples. For remote connecting over 
 
 ## Supported JSON-RPC methods:
 List of original [RPC methods](https://bitcoin.org/en/developer-reference#rpcs) which now implemented:
+
 | Name | Notes |
 | --- | --- |
 | `getaccount` | |
