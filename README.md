@@ -17,7 +17,7 @@ wallets at ports `10000` and `10001` and start balances `3` and `5.5` coins:
 $ ./testblockchain.sh --name BTC --wallet 10000:3 --wallet 10001:5.5
 ```
 
-Create some transactions by original [Bitcoin Core](https://bitcoin.org/en/download) client.
+Create some transactions, for example by original [Bitcoin Core](https://bitcoin.org/en/download) client.
 
 ```bash
 $ ./bitcoin-cli -rpcconnect=localhost -rpcport=10000 getbalance
