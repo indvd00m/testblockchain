@@ -11,7 +11,7 @@ TestBlockchain require java 8 for running.
 It is possible to use TestBlockchain either with command line or with java API.
 
 ### Command-line
-Download from [releases](https://github.com/indvd00m/testblockchain/releases) and unzip `testblockchain-cli-VERSION.zip` zip archive. Start blockchain with name `BTC` and two
+Download from [releases](https://github.com/indvd00m/testblockchain/releases/latest) and unzip `testblockchain-cli-VERSION.zip` zip archive. Start blockchain with name `BTC` and two
 wallets at ports `10000` and `10001` and start balances `3` and `5.5` coins:
 
 ```bash
